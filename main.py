@@ -69,6 +69,7 @@ with gr.Blocks(title="星露谷物语主机转换工具") as svhs_webui:
         """
             **注意:**\n
             适用版本: 星露谷物语 1.6\n
+            每次转换完房主后，若转错了要重新转换，需要重新点击`加载文件`按钮或重新上传存档\n
             **使用步骤:**\n
             1. 点击 `上传文件` 按钮加载存档文件\n
             星露谷默认存档位置为\n
@@ -85,4 +86,4 @@ with gr.Blocks(title="星露谷物语主机转换工具") as svhs_webui:
     )
 
 # 启动界面
-svhs_webui.launch(inbrowser=True, favicon_path="static/favicon.ico")
+svhs_webui.launch(inbrowser=True, favicon_path="static/favicon.ico", show_api=False)
