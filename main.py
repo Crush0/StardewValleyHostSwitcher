@@ -3,7 +3,7 @@ import tempfile
 
 import gradio as gr
 from parser import Parser as SaveParser
-
+print("等待程序启动...\n")
 # 界面功能函数
 def load_file(file):
     global parser, tag_mapping, input_file_name
@@ -44,7 +44,7 @@ parser = None
 tag_mapping = {}
 input_file_name = ""
 # Gradio界面
-with gr.Blocks() as svhs_webui:
+with gr.Blocks(title="星露谷物语主机转换工具") as svhs_webui:
     gr.Markdown("# 星露谷物语主机转换工具")
 
     # 文件上传
@@ -85,4 +85,4 @@ with gr.Blocks() as svhs_webui:
     )
 
 # 启动界面
-svhs_webui.launch(inbrowser=True)
+svhs_webui.launch(inbrowser=True, favicon_path="static/favicon.ico")

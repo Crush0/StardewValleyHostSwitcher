@@ -1,7 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 from PyInstaller.utils.hooks import collect_data_files
 
-datas = []
+datas = [('.\\static', 'static')]
 datas += collect_data_files('gradio_client')
 datas += collect_data_files('gradio')
 datas += collect_data_files('safehttpx')
@@ -29,7 +29,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='main',
+    name='StardewValleyHostSwitcher',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -42,4 +42,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['./static/favicon.ico'],
 )
