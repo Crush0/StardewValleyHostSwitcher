@@ -67,20 +67,20 @@ with gr.Blocks() as svhs_webui:
     switch_button.click(switch_host_and_export, inputs=[farmer_dropdown], outputs=[status_output, file_output])
     gr.Markdown(
         """
-            **注意:**
+            **注意:**\n
             适用版本: 星露谷物语 1.6\n
-            **使用步骤:**
-            1. 点击 `上传文件` 按钮加载存档文件
-            星露谷默认存档位置为
-                - Windows: `C:\\Users\\<你的用户名>\\AppData\\Roaming\\StardewValley\\Saves`
-                - Mac: `~/.config/StardewValley/Saves`
-                - Linux: `~/.config/StardewValley/Saves`\n
-            进入存档文件夹（名为 `农场名_一串数字`）,选择 `农场名_一串数字` 文件 (不是old文件)
-            2. 点击加载按钮
-            3. 选择新的房主
-            4. 点击 `转换房主` 按钮转换房主
-            5. 点击右侧蓝色虚线箭头下载保存文件
-            6. 复制文件替换存档 **（注意备份原存档！！！）**
+            **使用步骤:**\n
+            1. 点击 `上传文件` 按钮加载存档文件\n
+            星露谷默认存档位置为\n
+                Windows: C:\\Users\\<你的用户名>\\AppData\\Roaming\\StardewValley\\Saves\n
+                Mac: ~/.config/StardewValley/Saves\n
+                Linux: ~/.config/StardewValley/Saves\n
+            进入存档文件夹（名为 `农场名_一串数字`）,选择 `农场名_一串数字` 文件 (不是old文件)\n
+            2. 点击加载按钮\n
+            3. 选择新的房主\n
+            4. 点击 `转换房主` 按钮转换房主\n
+            5. 点击右侧蓝色虚线箭头下载保存文件\n
+            6. 复制文件替换存档 **（注意备份原存档！！！）**\n
         """
     )
 
