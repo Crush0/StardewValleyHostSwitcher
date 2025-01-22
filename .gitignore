@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+*.swo
+*.pyc
+__pycache__
+build
+dist
+.cache
+.pytest_cache
+.venv
