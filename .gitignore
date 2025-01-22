@@ -8,3 +8,4 @@ dist
 .cache
 .pytest_cache
 .venv
+.idea

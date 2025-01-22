@@ -127,6 +127,15 @@ class Parser:
         new_house_upgrade_level = new_player_tag.getElementsByTagName("houseUpgradeLevel")[0].firstChild.data
         player_tag.getElementsByTagName("houseUpgradeLevel")[0].firstChild.data = new_house_upgrade_level
         new_player_tag.getElementsByTagName("houseUpgradeLevel")[0].firstChild.data = origin_house_upgrade_level
+        returnTag = new_player_tag.cloneNode(True)
+        returnTag.tagName = 'Farmer'
+        # returnTag.setAttributes({
+        #     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        #     "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+        # })
+        returnTag.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance")
+        returnTag.setAttribute("xmlns:xsd", "http://www.w3.org/2001/XMLSchema")
+        return returnTag
 
     def save(self, file_path=None):
         if file_path is None:

@@ -27,13 +27,17 @@ def switch_host_and_export(selected_farmer):
     if not new_host_tag:
         return "请选择有效的房主", ""
 
-    parser.switch_host(new_host_tag)
+    new_player_tag = parser.switch_host(new_host_tag)
     output_file_name = f"{input_file_name}"
-    temp_file_path = os.path.join(tempfile.gettempdir(), output_file_name)
-    with open(temp_file_path, "wb") as temp_file:
+    save_temp_file_path = os.path.join(tempfile.gettempdir(), output_file_name)
+    gameinfo_temp_file_path = os.path.join(tempfile.gettempdir(), "SaveGameInfo")
+    with open(save_temp_file_path, "wb") as temp_file:
         temp_file.write(parser.to_xml())
+    with open(gameinfo_temp_file_path, "wb") as temp_file:
+        temp_file.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
+        temp_file.write(new_player_tag.toxml(encoding="utf-8"))
 
-    return "房主切换成功", temp_file_path
+    return "房主切换成功", [save_temp_file_path, gameinfo_temp_file_path]
 
 # 定义全局变量保存 parser 对象和 tag 映射
 parser = None
@@ -58,6 +62,7 @@ with gr.Blocks() as svhs_webui:
     file_output = gr.File(label="下载保存文件")
 
     # 绑定交互
+    file_input.change(lambda: ("", [], ""), inputs=[], outputs=[player_info, farmer_dropdown, status_output])
     load_button.click(load_file, inputs=[file_input], outputs=[player_info, farmer_dropdown])
     switch_button.click(switch_host_and_export, inputs=[farmer_dropdown], outputs=[status_output, file_output])
     gr.Markdown(
@@ -69,7 +74,7 @@ with gr.Blocks() as svhs_webui:
             星露谷默认存档位置为
                 - Windows: `C:\\Users\\<你的用户名>\\AppData\\Roaming\\StardewValley\\Saves`
                 - Mac: `~/.config/StardewValley/Saves`
-                - Linux: `~/.config/StardewValley/Saves`
+                - Linux: `~/.config/StardewValley/Saves`\n
             进入存档文件夹（名为 `农场名_一串数字`）,选择 `农场名_一串数字` 文件 (不是old文件)
             2. 点击加载按钮
             3. 选择新的房主
