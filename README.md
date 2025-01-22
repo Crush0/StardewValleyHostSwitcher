@@ -2,6 +2,7 @@
 
 ## 项目简介
 本项目是一个专为《星露谷物语（Stardew Valley）》设计的工具，用于切换多人存档的主机。通过简单的图形界面，用户可以快速修改存档文件，使新的玩家成为主机。
+This project is a tool designed specifically for Stardew Valley to switch hosts for multiplayer archives. With a simple graphical interface, users can quickly modify archive files to make new players the host.
 
 ## 功能特性
 - **存档加载**：支持加载《星露谷物语》的多人存档文件。
