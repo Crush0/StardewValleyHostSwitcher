@@ -12,6 +12,10 @@ This project is a tool designed specifically for Stardew Valley to switch hosts 
 - **文件导出**：生成修改后的存档文件，方便用户替换原存档。
 - **简洁易用**：基于 Gradio 构建的图形用户界面，操作直观。
 
+## 目前已知问题
+- 社区中心的精灵文本可能变得无法阅读，重新找法师触发剧情后可恢复正常。
+- ~~农场洞穴重新变为未选择状态。（已修复）~~
+
 ## 使用说明
 
 ### 环境要求
@@ -47,6 +51,7 @@ This project is a tool designed specifically for Stardew Valley to switch hosts 
 ## 注意事项
 - **备份原始存档**：在操作前，建议将原存档文件备份，以防操作失误。
 - **存档版本**：本工具适用于《星露谷物语》1.6版本，可能与其他版本存档不兼容。
+- 
 
 ## 贡献
 欢迎对本项目提出建议或贡献代码！您可以通过以下方式参与：
